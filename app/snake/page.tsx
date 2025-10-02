@@ -95,23 +95,24 @@ export default function SnakeGame() {
         return;
       }
 
-      switch (e.key) {
-        case 'ArrowUp':
-          e.preventDefault();
-          setDirection((d) => (d !== 'DOWN' ? 'UP' : d));
-          break;
-        case 'ArrowDown':
-          e.preventDefault();
-          setDirection((d) => (d !== 'UP' ? 'DOWN' : d));
-          break;
-        case 'ArrowLeft':
-          e.preventDefault();
-          setDirection((d) => (d !== 'RIGHT' ? 'LEFT' : d));
-          break;
-        case 'ArrowRight':
-          e.preventDefault();
-          setDirection((d) => (d !== 'LEFT' ? 'RIGHT' : d));
-          break;
+       if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
+        e.preventDefault();
+        setDirection((d) => (d !== 'DOWN' ? 'UP' : d));
+      }
+      
+      if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+        e.preventDefault();
+        setDirection((d) => (d !== 'UP' ? 'DOWN' : d));
+      }
+      
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+        e.preventDefault();
+        setDirection((d) => (d !== 'RIGHT' ? 'LEFT' : d));
+      }
+      
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+        e.preventDefault();
+        setDirection((d) => (d !== 'LEFT' ? 'RIGHT' : d));
       }
     };
 
